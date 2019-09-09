@@ -1,11 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from './routes';
 
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-      <p>This is a React + Redux project.</p>
-    </>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 
