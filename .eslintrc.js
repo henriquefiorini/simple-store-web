@@ -24,5 +24,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
+
+    'no-console': ['error', { allow: ['tron'] }],
   },
 };

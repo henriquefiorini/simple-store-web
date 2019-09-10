@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { Page } from '../../components';
 
@@ -31,6 +32,14 @@ class Home extends Component {
     this.setState({ products });
   }
 
+  handleAddProduct = product => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
+  };
+
   render() {
     const { products } = this.state;
 
@@ -44,7 +53,7 @@ class Home extends Component {
                 <ProductImage src={product.image} alt={product.title} />
                 <ProductTitle>{product.title}</ProductTitle>
                 <ProductPrice>{product.priceFormatted}</ProductPrice>
-                <AddToCartButton>
+                <AddToCartButton onClick={() => this.handleAddProduct(product)}>
                   <ButtonIcon />
                   <ButtonText>Add to cart</ButtonText>
                 </AddToCartButton>
@@ -56,4 +65,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
