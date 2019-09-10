@@ -24,7 +24,7 @@ export const ProductImage = styled.img`
   margin-bottom: 24px;
 `;
 
-export const ProductName = styled.h2`
+export const ProductTitle = styled.h2`
   font-size: 14px;
   font-weight: normal;
 `;
