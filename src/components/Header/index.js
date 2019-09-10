@@ -18,6 +18,8 @@ function Header({ cartCount }) {
   );
 }
 
-export default connect(state => ({
+const mapStateToProps = state => ({
   cartCount: state.cart.length,
-}))(Header);
+});
+
+export default connect(mapStateToProps)(Header);

@@ -22,7 +22,7 @@ export const ProductImage = styled.img`
   height: 80px;
 `;
 
-export const ProductName = styled.h2`
+export const ProductTitle = styled.h2`
   display: block;
   font-size: 13px;
   font-weight: normal;

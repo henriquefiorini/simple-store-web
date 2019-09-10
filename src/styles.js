@@ -59,6 +59,7 @@ export default createGlobalStyle`
 
   button {
     text-decoration: none;
+    user-select: none;
     cursor: pointer;
 
     &:hover,
