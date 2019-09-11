@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Container, Logo, Cart, CartIcon, CartText } from './styles';
@@ -17,6 +18,14 @@ function Header({ cartCount }) {
     </Container>
   );
 }
+
+Header.propTypes = {
+  cartCount: PropTypes.number,
+};
+
+Header.defaultProps = {
+  cartCount: 0,
+};
 
 const mapStateToProps = state => ({
   cartCount: state.cart.length,

@@ -40,18 +40,18 @@ class Cart extends Component {
       })
     ).isRequired,
     orderValue: PropTypes.string.isRequired,
-    updateQuantity: PropTypes.func.isRequired,
+    updateQuantityRequest: PropTypes.func.isRequired,
     removeFromCart: PropTypes.func.isRequired,
   };
 
   increaseQuantity = product => {
-    const { updateQuantity } = this.props;
-    updateQuantity(product.id, product.quantity + 1);
+    const { updateQuantityRequest } = this.props;
+    updateQuantityRequest(product.id, product.quantity + 1);
   };
 
   decreaseQuantity = product => {
-    const { updateQuantity } = this.props;
-    updateQuantity(product.id, product.quantity - 1);
+    const { updateQuantityRequest } = this.props;
+    updateQuantityRequest(product.id, product.quantity - 1);
   };
 
   render() {

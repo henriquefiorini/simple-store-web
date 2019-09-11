@@ -2,27 +2,27 @@
   "stock": [
     {
       "id": 1,
-      "amount": 3
+      "quantity": 3
     },
     {
       "id": 2,
-      "amount": 5
+      "quantity": 5
     },
     {
       "id": 3,
-      "amount": 2
+      "quantity": 2
     },
     {
       "id": 4,
-      "amount": 1
+      "quantity": 1
     },
     {
       "id": 5,
-      "amount": 5
+      "quantity": 5
     },
     {
       "id": 6,
-      "amount": 10
+      "quantity": 10
     }
   ],
   "products": [

@@ -16,7 +16,7 @@ import {
   ButtonText,
 } from './styles';
 
-import api from '../../services/api';
+import { Api } from '../../services';
 
 import { formatCurrency } from '../../util/format';
 
@@ -25,7 +25,7 @@ import * as CartActions from '../../store/modules/cart/actions';
 class Home extends Component {
   static propTypes = {
     quantity: PropTypes.objectOf(PropTypes.number).isRequired,
-    addToCart: PropTypes.func.isRequired,
+    addToCartRequest: PropTypes.func.isRequired,
   };
 
   state = {
@@ -33,7 +33,7 @@ class Home extends Component {
   };
 
   async componentDidMount() {
-    const response = await api.get('/products');
+    const response = await Api.get('/products');
     const products = response.data.map(product => ({
       ...product,
       priceFormatted: formatCurrency(product.price),
@@ -41,9 +41,9 @@ class Home extends Component {
     this.setState({ products });
   }
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
-    addToCart(product);
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
+    addToCartRequest(id);
   };
 
   render() {
@@ -60,7 +60,9 @@ class Home extends Component {
                 <ProductImage src={product.image} alt={product.title} />
                 <ProductTitle>{product.title}</ProductTitle>
                 <ProductPrice>{product.priceFormatted}</ProductPrice>
-                <AddToCartButton onClick={() => this.handleAddProduct(product)}>
+                <AddToCartButton
+                  onClick={() => this.handleAddProduct(product.id)}
+                >
                   <ButtonIcon />
                   <ButtonText>
                     Add to cart
