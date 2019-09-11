@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -10,7 +11,6 @@ import {
   ProductImage,
   ProductTitle,
   ProductPrice,
-  ProductQuantity,
   AddToCartButton,
   ButtonIcon,
   ButtonText,
@@ -23,6 +23,11 @@ import { formatCurrency } from '../../util/format';
 import * as CartActions from '../../store/modules/cart/actions';
 
 class Home extends Component {
+  static propTypes = {
+    quantity: PropTypes.objectOf(PropTypes.number).isRequired,
+    addToCart: PropTypes.func.isRequired,
+  };
+
   state = {
     products: [],
   };

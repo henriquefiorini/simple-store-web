@@ -7,14 +7,15 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  padding: 0 32px;
+  padding: 0 24px;
   border-bottom: 1px solid #eee;
 `;
 
 export const Logo = styled(Link)`
   color: #333;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.5;
 `;
 
 export const Cart = styled(Link)`
